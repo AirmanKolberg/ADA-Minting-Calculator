@@ -75,7 +75,6 @@ if __name__ == '__main__':
         bash_command('rm errors.json')
         dict_to_json(error_dict, 'errors.json')
 
-
         print(f'{error_message}\nRetrying in one minute...')
 
         sleep(60)
