@@ -71,6 +71,8 @@ if __name__ == '__main__':
     update_at_startup = verify_update_at_startup(response)
 
     if update_at_startup:
+
+        print('Updating now!')
         update_github()
 
     while True:
