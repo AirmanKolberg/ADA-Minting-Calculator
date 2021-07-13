@@ -30,6 +30,9 @@ amount of ADA that was created over time, calculate the average amount of ADA
 minted per minute, average out all of those data, and then project that average
 into the future to get an estimated time and date the last ADA will be minted.
 
+In the case of any errors (since this is using the cryptocompare API), they will
+all be logged to a file called `errors.json`.
+
 A data.json file is already provided to you from my data collection adventures.
 Enjoy, and add more data if you can, please!
 

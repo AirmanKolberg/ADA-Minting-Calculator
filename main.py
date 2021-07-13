@@ -2,6 +2,7 @@ from datetime import datetime, timedelta
 from math import floor
 from ada_supply import get_crypto_supply
 from json_tools import *
+from system_functions import clear_screen, bash_command
 
 """
 Run this script one time in order to pull up
@@ -37,6 +38,8 @@ def difference_between(a, b):
 
 
 if __name__ == '__main__':
+
+    clear_screen()
 
     # Import data from json
     data = json_to_dict('data.json')

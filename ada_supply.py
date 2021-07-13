@@ -1,14 +1,16 @@
 import cryptocompare
 from datetime import datetime
 from time import sleep
-from os import system
+from system_functions import clear_screen, bash_command
 from pprint import pprint
 from json_tools import *
 
-
-def clear_screen():
-    
-    _ = system('clear')
+"""
+Run this script like you would a server, running
+in the background simply collecting data and
+constantly displaying to you the results in the
+Terminal emulator window.
+"""
 
 
 def get_datetime():
@@ -41,6 +43,7 @@ def main_loop():
         clear_screen()
         pprint(master_pairs)
 
+        bash_command('rm data.json')
         dict_to_json(master_pairs, 'data.json')
 
         # Check again in 20 minutes
@@ -57,13 +60,23 @@ if __name__ == '__main__':
 
         print('\nClosing...')
 
-    # In case of any error, log it on the screen and retry in a minute
+    # In case of any error, log it, print it, and retry in a minute
     except Exception as error:
         
-        error_message = f"""ERROR: {error}
-Retrying in one minute..."""
+        # Gather error details
+        error_time = datetime.now()
+        error_message = f'ERROR: {error}'
 
-        print(error_message)
+        # Retrieve the errors log
+        error_dict = json_to_dict('errors.json')
+
+        # Add the new error to the log
+        error_dict[error_time] = error_message
+        bash_command('rm errors.json')
+        dict_to_json(error_dict, 'errors.json')
+
+
+        print(f'{error_message}\nRetrying in one minute...')
 
         sleep(60)
         main_loop()
