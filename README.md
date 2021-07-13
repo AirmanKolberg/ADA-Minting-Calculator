@@ -28,7 +28,8 @@ become more accurate over time), run the `main.py` file in the same manner.
 This file will take in all of the data from the `data.json` file, calculate the
 amount of ADA that was created over time, calculate the average amount of ADA
 minted per minute, average out all of those data, and then project that average
-into the future to get an estimated time and date the last ADA will be minted
+into the future to get an estimated time and date the last ADA will be minted.
+
 *Note: In future, for better accuracy, I will need to incorporate a forecast model to estimate the changes in ADA production, if any are detected...*
 
 ---
