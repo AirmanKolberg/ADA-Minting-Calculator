@@ -38,20 +38,51 @@ def countdown(seconds):
     clear_screen()
 
 
+def update_github():
+
+    git_commands = ['git add data.json',
+                    'git commit -am "💽  Freebee Starting Data"',
+                    './push']
+
+    # Execute all of the git_commands as Shell commands
+    for command in git_commands:
+        
+        bash_command(command)
+
+
+def startup_question():
+
+    response = input("Update now?  ('y' or 'yes', 'n' or 'no'):\n").lower()
+    return response
+
+
+def verify_update_at_startup(user_response):
+
+    if user_response == 'y' or user_response == 'yes':
+        return True
+
+    elif user_response == 'n' or user_response == 'no':
+        return False
+    
+    else:
+        response = startup_question()
+        verify_update_at_startup(response) 
+
+
 if __name__ == '__main__':
 
     clear_screen()
+
+    # Verify if user wishes to update the data before the 6 hour timer
+    response = startup_question()
+    update_at_startup = verify_update_at_startup(response)
+
+    if update_at_startup:
+        update_github()
 
     while True:
 
         # Wait six hours to push an update
         countdown(60 * 60 * 6)
-
-        git_commands = ['git add data.json',
-                        'git commit -am "💽  Freebee Starting Data"',
-                        './push']
-
-        # Execute all of the git_commands as Shell commands
-        for command in git_commands:
-            
-            bash_command(command)
+        update_github()
+        
