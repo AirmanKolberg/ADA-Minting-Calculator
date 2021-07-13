@@ -2,4 +2,4 @@
 
 git add data.json
 git commit -am "💽  Freebee Starting Data"
-./push
+git push https://github.com/AirmanKolberg/ADA-Minting-Calculator.git
