@@ -40,14 +40,7 @@ def countdown(seconds):
 
 def update_github():
 
-    git_commands = ['git add data.json',
-                    'git commit -am "💽  Freebee Starting Data"',
-                    './push']
-
-    # Execute all of the git_commands as Shell commands
-    for command in git_commands:
-        
-        bash_command(command)
+    bash_command('./updateGitHubData.sh')
 
 
 def startup_question():
