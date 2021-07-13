@@ -22,7 +22,6 @@ def countdown(seconds):
         else:
             min_display = 'min'
 
-
         # Setup grammar conditions for sec/secs
         if secs != 1:
             sec_display = 'secs'
