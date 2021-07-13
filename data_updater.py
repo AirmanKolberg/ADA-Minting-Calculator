@@ -29,7 +29,7 @@ def countdown(seconds):
             sec_display = 'sec'
 
         # `timer` example: "Updating in 121mins 1sec..."
-        timer = f'Updating in {mins}{min_display} {secs}{sec_display}...'
+        timer = f'\nUpdating in {mins}{min_display} {secs}{sec_display}...'
 
 
         print(timer, end="\r")
