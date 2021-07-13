@@ -22,6 +22,8 @@ decreasing).
 This script will, every 20 minutes, check how much ADA is in circulation, and then
 saves this data to a file called `data.json` for later retrieval by other apps.
 
+*Note: The data in `data.json` is currently in the MST (U.S.) timezone*
+
 2. Once you've collected a good amount of data (of course this should, in theory,
 become more accurate over time), run the `main.py` file in the same manner.
 
