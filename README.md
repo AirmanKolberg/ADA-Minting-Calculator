@@ -30,6 +30,9 @@ amount of ADA that was created over time, calculate the average amount of ADA
 minted per minute, average out all of those data, and then project that average
 into the future to get an estimated time and date the last ADA will be minted.
 
+A data.json file is already provided to you from my data collection adventures.
+Enjoy, and add more data if you can, please!
+
 *Note: In future, for better accuracy, I will need to incorporate a forecast model to estimate the changes in ADA production, if any are detected...*
 
 ---
