@@ -40,6 +40,8 @@ def countdown(seconds):
 
 if __name__ == '__main__':
 
+    clear_screen()
+
     while True:
 
         # Wait six hours to push an update
