@@ -72,8 +72,8 @@ if __name__ == '__main__':
 
     if update_at_startup:
 
-        print('Updating now!')
         update_github()
+        clear_screen()
 
     while True:
 
