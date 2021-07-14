@@ -17,8 +17,12 @@ decreasing).
 
 ## Steps to Take
 
-1. Run the `ada_supply.py` file in the Terminal emulator with either:
+1. Whether it be `pip` or `pip3`, be sure to install all dependencies with a:
+`pip install -r requirements.txt`
+2. Run the `ada_supply.py` file in the Terminal emulator with either:
    `python ada_supply.py` -or- `python3 ada_supply.py`
+
+###### *Note: If you do not wish to collect the data on the backend yourself, my `data.json` file will be updated on GitHub at least every 6 hours.*
 
 This script will, every 20 minutes, check how much ADA is in circulation, and then
 saves this data to a file called `data.json` for later retrieval by other apps.
