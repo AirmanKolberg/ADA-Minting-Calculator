@@ -11,14 +11,13 @@ def get_file_names_to_update():
     for update_type in update_types:
         bash_command(f'git status | grep {update_type} >> {update_type}.txt')
 
-
     # Import the modified list
     modified = open('modified.txt', 'r')
     modified_line = modified.read()
     modified.close()
 
     # Import the deleted list
-    deleted = open('modified.txt', 'r')
+    deleted = open('deleted.txt', 'r')
     deleted_line = deleted.read()
     deleted.close()
 
@@ -28,6 +27,8 @@ def get_file_names_to_update():
     # Make each modified/deleted_line its own variable in their respective arrays
     modified_files = modified_line.split('\n')
     deleted_files = deleted_line.split('\n')
+    print(modified_files)
+    print(deleted_files)
 
     # Define empty master lists for the file names
     modified_file_names = list()
@@ -46,7 +47,7 @@ def get_file_names_to_update():
     while deleted_files:
 
         file = deleted_files.pop()
-        file_name = file.replace('	deleted:   ', '')
+        file_name = file.replace('	deleted:    ', '')
 
         if file_name != '':
             deleted_file_names.append(file_name)
