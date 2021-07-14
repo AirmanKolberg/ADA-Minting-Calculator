@@ -21,4 +21,3 @@ def dict_to_json(dictionary, json_location):
 
 if __name__ == '__main__':
     pass
-
