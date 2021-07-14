@@ -5,34 +5,54 @@ from json_tools import json_to_dict
 
 def get_file_names_to_update():
 
-     # Get a list of all modified files
-    bash_command('git status | grep modified >> updated.txt')
+    update_types = ['modified', 'deleted']
 
-    # Import that list
-    modified = open('updated.txt', 'r')
-    line = modified.read()
+    # Get a list of all modified and deleted files
+    for update_type in update_types:
+        bash_command(f'git status | grep {update_type} >> {update_type}.txt')
+
+
+    # Import the modified list
+    modified = open('modified.txt', 'r')
+    modified_line = modified.read()
     modified.close()
 
-    # Delete the list to avoid overlap
-    bash_command('rm updated.txt')
+    # Import the deleted list
+    deleted = open('modified.txt', 'r')
+    deleted_line = deleted.read()
+    deleted.close()
 
-    # Make each line its own variable in an array
-    files = line.split('\n')
+    # Ensure lists are deleted to avoid overlap
+    bash_command('rm modified.txt && rm deleted.txt')
 
-    # Define an empty master list for the file names
-    file_names = list()
+    # Make each modified/deleted_line its own variable in their respective arrays
+    modified_files = modified_line.split('\n')
+    deleted_files = deleted_line.split('\n')
 
-    # Iteratively add each name to the list
-    while files:
+    # Define empty master lists for the file names
+    modified_file_names = list()
+    deleted_file_names = list()
 
-        file = files.pop()
+    # Iteratively add each name to the modified list
+    while modified_files:
+
+        file = modified_files.pop()
         file_name = file.replace('	modified:   ', '')
 
         if file_name != '':
-            file_names.append(file_name)
+            modified_file_names.append(file_name)
+    
+    # Iteratively add each name to the deleted list
+    while deleted_files:
+
+        file = deleted_files.pop()
+        file_name = file.replace('	deleted:   ', '')
+
+        if file_name != '':
+            deleted_file_names.append(file_name)
     
     # Returns a list of modified file names
-    return file_names
+    return modified_file_names, deleted_file_names
 
 
 def add_and_commit_file(file_names):
@@ -53,18 +73,33 @@ def add_and_commit_file(file_names):
             bash_command(f'git commit -m "{file_description}"')
             bash_command('git push https://github.com/AirmanKolberg/ADA-Minting-Calculator.git')
 
-
         else:
 
             print(f'Update key:value pair for {this_file} with name_to_commit.py')
+
+
+def delete_file(file_names):
+
+    # Whilst there are still files left in the files list
+    while file_names:
+
+        this_file = file_names.pop()
+
+        bash_command(f'git rm {this_file}')
+        bash_command('git commit -m "deleted/renamed file"')
+        bash_command('git push https://github.com/AirmanKolberg/ADA-Minting-Calculator.git')
 
 
 if __name__ == '__main__':
 
     clear_screen()
 
-    files_to_update = get_file_names_to_update()
+    files_to_update, files_to_delete = get_file_names_to_update()
 
     if files_to_update:
 
         add_and_commit_file(files_to_update)
+    
+    if files_to_delete:
+
+        delete_file(files_to_delete)
