@@ -96,7 +96,7 @@ def search_for_untracked_files():
     bash_command(f'git status >> untracked.txt')
 
     # Import the untracked list
-    untracked = open('modified.txt', 'r')
+    untracked = open('untracked.txt', 'r')
     untracked_line = untracked.read()
     untracked.close()
 
