@@ -91,6 +91,40 @@ def delete_file(file_names):
         bash_command('git push https://github.com/AirmanKolberg/ADA-Minting-Calculator.git')
 
 
+def search_for_untracked_files():
+
+    bash_command(f'git status >> untracked.txt')
+
+    # Import the untracked list
+    untracked = open('modified.txt', 'r')
+    untracked_line = untracked.read()
+    untracked.close()
+
+    # Ensure list is deleted to avoid overlap
+    bash_command('rm untracked.txt')
+
+    # Make untracked_line its own variable in an arrays
+    untracked_files = untracked_line.split('\n')
+
+    input(untracked_files)
+
+    # Define empty master list for the file names
+    untracked_file_names = list()
+
+    # Iteratively add each name to the untracked list
+    while untracked_files:
+
+        file = modified_files.pop()
+        file_name = file.replace('	modified:   ', '')
+
+        if file_name != '':
+            modified_file_names.append(file_name)
+    
+    
+    # Returns a list of untracked file names
+    return modified_file_names, deleted_file_names
+
+
 if __name__ == '__main__':
 
     clear_screen()
@@ -104,3 +138,5 @@ if __name__ == '__main__':
     if files_to_delete:
 
         delete_file(files_to_delete)
+
+    search_for_untracked_files()
