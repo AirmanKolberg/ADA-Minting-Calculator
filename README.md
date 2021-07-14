@@ -43,7 +43,7 @@ In the case of any errors (since this is using the cryptocompare API), they will
 all be logged to a file called `errors.json`.
 
 A data.json file is already provided to you from my data collection adventures.
-Enjoy, and add more data if you can, please!
+Enjoy, and consider adding more data if you can, please!
 
 ###### *Note: In future, for better accuracy, I will need to incorporate a forecast model to estimate the changes in ADA production, if any are detected...*
 
