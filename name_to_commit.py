@@ -1,6 +1,5 @@
-from system_functions import clear_screen, bash_command, verify_yes_or_no
+from system_functions import clear_screen, bash_command, verify_yes_or_no, countdown
 from json_tools import *
-from data_updater import countdown
 from time import sleep
 
 """
