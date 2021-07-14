@@ -1,5 +1,6 @@
 from time import sleep
 from system_functions import bash_command, clear_screen
+from commit_and_push_all import add_and_commit_file
 
 """
 This application can be used to automate the process
@@ -38,11 +39,6 @@ def countdown(seconds):
     clear_screen()
 
 
-def update_github():
-
-    bash_command('./updateGitHubData.sh')
-
-
 def startup_question():
 
     response = input("Update now?  ('y' or 'yes', 'n' or 'no'):\n").lower()
@@ -68,16 +64,18 @@ if __name__ == '__main__':
 
     # Verify if user wishes to update the data before the 6 hour timer
     response = startup_question()
+
     update_at_startup = verify_update_at_startup(response)
 
     if update_at_startup:
 
-        update_github()
+        add_and_commit_file(['data.json'])
         clear_screen()
 
     while True:
 
         # Wait two hours to push an update
         countdown(60 * 60 * 2)
-        update_github()
-        
+
+        add_and_commit_file(['data.json'])
+        clear_screen()
