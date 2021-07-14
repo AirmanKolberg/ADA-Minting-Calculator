@@ -48,15 +48,15 @@ def add_and_commit_file(file_names):
         if this_file in commit_data:
 
             bash_command(f'git add {this_file}')
-            sleep(2)
+            # sleep(2)
 
             file_description = commit_data[this_file]
 
             bash_command(f'git commit -m "{file_description}"')
-            sleep(2)
+            # sleep(2)
 
             bash_command('git push https://github.com/AirmanKolberg/ADA-Minting-Calculator.git')
-            sleep(4)
+            # sleep(4)
 
 
         else:
