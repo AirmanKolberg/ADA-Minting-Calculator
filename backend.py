@@ -35,6 +35,9 @@ def main_loop():
     # Retrieve the master_pairs variable
     master_pairs = json_to_dict('data.json')
     
+    # Setup a counter
+    ticker = 0
+
     while True:
 
         date_and_time = get_datetime()
@@ -50,8 +53,17 @@ def main_loop():
         bash_command('rm data.json')
         dict_to_json(master_pairs, 'data.json')
 
-        # Share results with GitHub community
-        add_and_commit_file(['data.json'])
+        if ticker > 2:
+
+            # Share results with GitHub community every hour
+            add_and_commit_file(['data.json'])
+
+            # Reset the ticker
+            ticker = 0
+            
+        else:
+            
+            ticker += 1
 
         # Check again in 20 minutes
         sleep(20 * 60)
