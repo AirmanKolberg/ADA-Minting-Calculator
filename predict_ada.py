@@ -5,7 +5,7 @@ from json_tools import *
 from system_functions import clear_screen, bash_command
 
 """
-Run this script one time in order to pull up
+Run this script each time you want to pull up
 the variables in data.json, calculate the
 average amount of new ADA minted per minute,
 as well as give the approximate date and time
@@ -46,7 +46,7 @@ if __name__ == '__main__':
 
     # Ensure even number of data points
     if len(data) % 2 != 0:
-        
+
         data.popitem()
 
     datetimes = list()
