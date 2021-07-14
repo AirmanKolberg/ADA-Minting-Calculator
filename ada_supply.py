@@ -4,12 +4,15 @@ from time import sleep
 from system_functions import clear_screen, bash_command
 from pprint import pprint
 from json_tools import *
+from commit_and_push_all import add_and_commit_file
 
 """
 Run this script like you would a server, running
 in the background simply collecting data and
 constantly displaying to you the results in the
-Terminal emulator window.
+Terminal emulator window.  I've also set this
+application to share the updated results with
+you guys in the GitHub community.
 """
 
 
@@ -41,11 +44,14 @@ def main_loop():
         master_pairs[date_and_time] = ada_supply
 
         clear_screen()
-        
+
         pprint(master_pairs)
 
         bash_command('rm data.json')
         dict_to_json(master_pairs, 'data.json')
+
+        # Share results with GitHub community
+        add_and_commit_file(['data.json'])
 
         # Check again in 20 minutes
         sleep(20 * 60)
