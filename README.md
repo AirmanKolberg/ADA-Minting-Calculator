@@ -1,7 +1,7 @@
 # ADA Minting Calculator
 > When will the last ADA be minted on the Cardano network?
 
-> (All 45 billion)
+## Summary
 
 This quick project I made was intended to help approximate the date and time
 at which all ADA (on the Cardano network) will be minted.  ADA is minted, much
