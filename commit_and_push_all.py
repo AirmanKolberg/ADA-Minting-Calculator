@@ -40,6 +40,7 @@ def add_and_commit_file(file_names):
     # Import the file_name:description data
     commit_data = json_to_dict('masterCommit.json')
 
+    # Whilst there are still files left in the files list
     while file_names:
 
         this_file = file_names.pop()
