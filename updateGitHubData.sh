@@ -5,10 +5,6 @@ git status
 # Wait five seconds for user's viewing pleasure
 sleep 5
 
-git add data.json
-
-sleep 1
-
 git commit -am "💽  Freebee Starting Data"
 
 sleep 1
