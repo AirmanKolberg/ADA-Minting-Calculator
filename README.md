@@ -24,7 +24,7 @@ decreasing).
 2. Run the `ada_supply.py` file in the Terminal emulator with either:
    `python ada_supply.py` -or- `python3 ada_supply.py`
 
-###### *Note: If you do not wish to collect the data on the backend yourself, my `data.json` file will be updated on GitHub at least every 6 hours.*
+###### *Note: If you do not wish to collect the data on the backend yourself, my `data.json` file will be frequently updated and shared with the GitHub community.*
 
 This script will, every 20 minutes, check how much ADA is in circulation, and then
 saves this data to a file called `data.json` for later retrieval by other apps.
