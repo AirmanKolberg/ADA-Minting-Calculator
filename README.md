@@ -27,7 +27,7 @@ decreasing).
 This script will, every 20 minutes, check how much ADA is in circulation, and then
 saves this data to a file called `data.json` for later retrieval by other apps.
 
-*Note: The data in `data.json` is currently in the MST (U.S.) timezone*
+###### *Note: The data in `data.json` is currently in the MST (U.S.) timezone*
 
 2. Once you've collected a good amount of data (of course this should, in theory,
 become more accurate over time), run the `main.py` file in the same manner.
@@ -43,7 +43,7 @@ all be logged to a file called `errors.json`.
 A data.json file is already provided to you from my data collection adventures.
 Enjoy, and add more data if you can, please!
 
-*Note: In future, for better accuracy, I will need to incorporate a forecast model to estimate the changes in ADA production, if any are detected...*
+###### *Note: In future, for better accuracy, I will need to incorporate a forecast model to estimate the changes in ADA production, if any are detected...*
 
 ---
 
