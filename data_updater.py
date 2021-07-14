@@ -77,7 +77,7 @@ if __name__ == '__main__':
 
     while True:
 
-        # Wait six hours to push an update
-        countdown(60 * 60 * 6)
+        # Wait two hours to push an update
+        countdown(60 * 60 * 2)
         update_github()
         
