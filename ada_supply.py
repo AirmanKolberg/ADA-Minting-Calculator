@@ -7,7 +7,7 @@ from json_tools import *
 from commit_and_push_all import add_and_commit_file
 
 """
-Run this script like you would a server, running
+Run this script like as a server, just running
 in the background simply collecting data and
 constantly displaying to you the results in the
 Terminal emulator window.  I've also set this
