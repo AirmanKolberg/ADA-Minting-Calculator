@@ -109,6 +109,7 @@ def search_for_untracked_files():
     if 'Untracked files:' in untracked_files:
 
         starting_point = untracked_files.index('Untracked files:')
+        print(untracked_files)
         input(starting_point)
 
         tracking_files = True
