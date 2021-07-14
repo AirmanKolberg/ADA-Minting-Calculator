@@ -1,6 +1,7 @@
-from system_functions import clear_screen, bash_command
+from system_functions import clear_screen, bash_command, verify_yes_or_no
 from json_tools import *
 from data_updater import countdown
+from time import sleep
 
 """
 This file is to be used to add a new
@@ -53,13 +54,56 @@ def add_key_value_pair():
     dict_to_json(commit_dict, 'masterCommit.json')
 
     # Ask to add another
-    add_another = input('Add another?  (Leave blank if no, type anything if yes)\n')
+    add_another = verify_yes_or_no(input('Add another?\n').lower())
 
     # If so, recursively go through the process again
     if add_another:
         add_key_value_pair()
 
 
+def check_for_existing_key():
+
+    commit_dict = json_to_dict('masterCommit.json')
+
+    key_to_find = input("What is the name of the file for which you'd like to search?\n")
+
+    if key_to_find in commit_dict:
+
+        print(f'{key_to_find} exists, the description is:\n{commit_dict[key_to_find]}')
+
+    else:
+
+        add_key = verify_yes_or_no(input(f'{key_to_find} does not exist.  Would you like to add it?\n').lower())
+
+        if add_key:
+
+            add_key_value_pair()
+
+
+def main_menu():
+
+    menu_options = """
+add     -     add a new key:value pair
+check   -     check if key (file name) already exists
+"""
+
+    option = input(f"Please select an option below:\n{menu_options}").lower()
+
+    if option == 'add':
+
+        add_key_value_pair()
+
+    elif option == 'check':
+
+        check_for_existing_key()
+
+    else:
+
+        print('You cannot type, ergo you cannot use this app, goodbye.')
+        sleep(2.5)
+        clear_screen()
+
+
 if __name__ == '__main__':
 
-    add_key_value_pair()    
+    main_menu()    
