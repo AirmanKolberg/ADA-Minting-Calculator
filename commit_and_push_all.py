@@ -1,5 +1,6 @@
 from system_functions import bash_command
 from time import sleep
+from json_tools import json_to_dict
 
 
 def get_file_names_to_update():
@@ -34,16 +35,32 @@ def get_file_names_to_update():
     return file_names
 
 
-def add_and_commit_file(file_name):
+def add_and_commit_file(file_names):
 
-    bash_commands = ['git status',
-                     f'git add {file_name}',
-                     f'git commit -am "{}"']
-    
-    for each_command in bash_commands:
+    # Import the file_name:description data
+    commit_data = json_to_dict('masterCommit.json')
 
-        bash_command(each_command)
-        sleep(2)
+    while file_names:
+
+        this_file = file_names.pop()
+
+        if this_file in commit_data:
+
+            bash_command(f'git add {this_file}')
+            sleep(2)
+
+            file_description = commit_data[this_file]
+
+            bash_command(f'git commit -m "{file_description}"')
+            sleep(2)
+
+            bash_command('git push https://github.com/AirmanKolberg/ADA-Minting-Calculator.git')
+            sleep(4)
+
+
+        else:
+
+            print(f'Update key:value pair for {this_file} with name_to_commit.py')
 
 
 if __name__ == '__main__':
@@ -52,4 +69,4 @@ if __name__ == '__main__':
 
     if files_to_update:
 
-        add_and_commit_file()
+        add_and_commit_file(files_to_update)
