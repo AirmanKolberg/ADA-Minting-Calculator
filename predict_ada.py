@@ -46,6 +46,7 @@ if __name__ == '__main__':
 
     # Ensure even number of data points
     if len(data) % 2 != 0:
+        
         data.popitem()
 
     datetimes = list()
