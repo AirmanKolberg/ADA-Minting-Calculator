@@ -41,6 +41,7 @@ def main_loop():
         master_pairs[date_and_time] = ada_supply
 
         clear_screen()
+        
         pprint(master_pairs)
 
         bash_command('rm data.json')
