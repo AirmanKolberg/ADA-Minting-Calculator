@@ -13,10 +13,13 @@ def clear_screen():
 
 
 def verify_yes_or_no(response):
+
     if response == 'yes':
         return True
+
     elif response == 'no':
         return False
+
     else:
         return verify_yes_or_no(input(f"{response} is neither 'yes' nor 'no', please try again: ").lower())
 
