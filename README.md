@@ -1,5 +1,5 @@
 # ADA Minting Calculator
-> When will the last ADA be minted on the Cardano network?
+> When will the last ADA (the 45 billionth ADA) be minted on the Cardano network?
 
 ## Summary
 
