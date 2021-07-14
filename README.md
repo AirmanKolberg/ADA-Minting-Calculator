@@ -32,7 +32,7 @@ saves this data to a file called `data.json` for later retrieval by other apps.
 ###### *Note: The data in `data.json` is currently in the MST (U.S.) timezone*
 
 2. Once you've collected a good amount of data (of course this should, in theory,
-become more accurate over time), run the `main.py` file in the same manner.
+become more accurate over time), run the `predict_ada.py` file in the same manner.
 
 This file will take in all of the data from the `data.json` file, calculate the
 amount of ADA that was created over time, calculate the average amount of ADA
