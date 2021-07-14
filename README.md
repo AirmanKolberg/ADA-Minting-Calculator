@@ -21,8 +21,8 @@ decreasing).
 
 1. Whether it be `pip` or `pip3`, be sure to install all dependencies with a:
 `pip install -r requirements.txt`
-2. Run the `ada_supply.py` file in the Terminal emulator with either:
-   `python ada_supply.py` -or- `python3 ada_supply.py`
+2. Run the `backend.py` file in the Terminal emulator with either:
+   `python backend.py` -or- `python3 backend.py`
 
 ###### *Note: If you do not wish to collect the data on the backend yourself, my `data.json` file will be frequently updated and shared with the GitHub community.*
 
