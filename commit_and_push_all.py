@@ -106,6 +106,22 @@ def search_for_untracked_files():
     # Make untracked_line its own variable in an arrays
     untracked_files = untracked_line.split('\n')
 
+    if 'Untracked files:' in untracked_files:
+
+        starting_point = untracked_files.index('Untracked files:')
+        input(starting_point)
+
+        tracking_files = True
+
+        while tracking_files:
+
+            for current_file in untracked_files:
+
+                if 'nothing added to commit' in current_file:
+
+                    tracking_files = False
+
+
     input(untracked_files)
 
     # Define empty master list for the file names
