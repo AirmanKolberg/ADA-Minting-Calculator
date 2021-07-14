@@ -14,10 +14,10 @@ def clear_screen():
 
 def verify_yes_or_no(response):
 
-    if response == 'yes':
+    if response == 'yes' or response == 'y':
         return True
 
-    elif response == 'no':
+    elif response == 'no' or response == 'n':
         return False
 
     else:
