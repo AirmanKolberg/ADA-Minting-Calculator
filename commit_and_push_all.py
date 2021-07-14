@@ -1,5 +1,4 @@
 from system_functions import bash_command, clear_screen
-from time import sleep
 from json_tools import json_to_dict
 
 
