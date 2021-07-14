@@ -127,27 +127,6 @@ def search_for_untracked_files():
         
         # Push the updates to GitHub
         add_and_commit_file(files_to_track)
-            
-            
-
-
-    input(untracked_files)
-
-    # Define empty master list for the file names
-    untracked_file_names = list()
-
-    # Iteratively add each name to the untracked list
-    while untracked_files:
-
-        file = modified_files.pop()
-        file_name = file.replace('	modified:   ', '')
-
-        if file_name != '':
-            modified_file_names.append(file_name)
-    
-    
-    # Returns a list of untracked file names
-    return modified_file_names, deleted_file_names
 
 
 if __name__ == '__main__':
