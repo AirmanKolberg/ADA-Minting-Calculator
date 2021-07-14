@@ -1,4 +1,4 @@
-from system_functions import bash_command
+from system_functions import bash_command, clear_screen
 from time import sleep
 from json_tools import json_to_dict
 
@@ -47,16 +47,11 @@ def add_and_commit_file(file_names):
 
         if this_file in commit_data:
 
-            bash_command(f'git add {this_file}')
-            # sleep(2)
-
             file_description = commit_data[this_file]
 
+            bash_command(f'git add {this_file}')
             bash_command(f'git commit -m "{file_description}"')
-            # sleep(2)
-
             bash_command('git push https://github.com/AirmanKolberg/ADA-Minting-Calculator.git')
-            # sleep(4)
 
 
         else:
@@ -65,6 +60,8 @@ def add_and_commit_file(file_names):
 
 
 if __name__ == '__main__':
+
+    clear_screen()
 
     files_to_update = get_file_names_to_update()
 
