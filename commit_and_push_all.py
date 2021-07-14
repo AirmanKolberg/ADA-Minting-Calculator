@@ -10,7 +10,7 @@ def get_file_names_to_update():
     # Get a list of all modified and deleted files
     for update_type in update_types:
         bash_command(f'git status | grep {update_type} >> {update_type}.txt')
-        print('gi')
+        print('Made a list...')
 
     # Import the modified list
     modified = open('modified.txt', 'r')
