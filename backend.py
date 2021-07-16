@@ -31,14 +31,14 @@ def get_crypto_supply(coin):
 
 
 def main_loop():
-
-    # Retrieve the master_pairs variable
-    master_pairs = json_to_dict('data.json')
     
-    # Setup a counter
-    ticker = 0
+    # Setup a counter with max int 3
+    ticker = 3
 
     while True:
+
+        # Retrieve the master_pairs variable
+        master_pairs = json_to_dict('data.json')
 
         date_and_time = get_datetime()
         ada_supply = get_crypto_supply('ADA')
