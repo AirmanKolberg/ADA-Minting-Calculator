@@ -106,4 +106,4 @@ if __name__ == '__main__':
 
     # Print these results as well
     print(f'Average ADA per minute created: {average_per_minute} ADA per minute.')
-    print(f'At this rate, all ADA should be minted at around {completion_time}.')
+    print(f'At this rate, all ADA should be minted at around:\n{completion_time}.')
