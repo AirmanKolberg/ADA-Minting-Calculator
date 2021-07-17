@@ -85,6 +85,7 @@ if __name__ == '__main__':
     # Calculate the average amount of ADA minted each minute
     average_per_minute = sum(differences_per_minute) / len(differences_per_minute)
 
+    # Total ADA supply is 45 billion
     total_ada = 45000000000
 
     # Retrieve the total number of ADA in circulation at this moment
