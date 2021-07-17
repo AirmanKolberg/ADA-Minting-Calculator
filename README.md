@@ -50,7 +50,7 @@ Enjoy, and consider adding more data if you can, please!
 ---
 
 ### Donations!
-Consider donating, though of course not necessary!  :)
+Consider donating, though of course not necessary!  🙂
 
 Cardano (ADA):
 addr1q9jxsfd87g4f9rcl7x43lwxnkmklek279yw0fhwrsm3pjjal23me7f9yesnhs2fhpf05xd0deta3csgn4z433rze7yjsav8ejn
