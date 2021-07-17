@@ -32,7 +32,7 @@ def get_crypto_supply(coin):
 
 def main_loop():
     
-    # Setup a counter with max int 3
+    # Setup a counter with max int 3 (20min * 3 = 1 update/hour)
     ticker = 3
 
     while True:
