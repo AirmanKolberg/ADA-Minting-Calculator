@@ -5,6 +5,7 @@ from json_tools import *
 from system_functions import clear_screen, bash_command
 
 """
+
 -----This is a cheat-sheet for pushing updates!-----
 
 Run this script each time you want to pull up
@@ -15,6 +16,7 @@ at which all 45 billion ADA will be minted,
 assuming of course that they continue to be
 minted at their current rate, as estimated
 by this script.
+
 """
 
 
