@@ -100,7 +100,7 @@ check   -     check if key (file name) already exists
     else:
 
         print('You cannot type, ergo you cannot use this app, goodbye.')
-        sleep(2.5)
+        sleep(2)
         clear_screen()
 
 
