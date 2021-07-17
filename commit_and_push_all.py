@@ -74,7 +74,7 @@ def add_and_commit_file(file_names):
 
         else:
 
-            print(f'Update key:value pair for {this_file} with name_to_commit.py')
+            print(f'UNIDENTIFIED FILE!\nUpdate key:value pair for {this_file} with name_to_commit.py\n')
 
 
 def delete_file(file_names):
