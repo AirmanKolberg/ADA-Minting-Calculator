@@ -1,6 +1,6 @@
 from datetime import datetime, timedelta
 from math import floor
-from ada_supply import get_crypto_supply
+from ada_supply import get_ada_supply
 from json_tools import *
 from system_functions import clear_screen, bash_command
 
@@ -88,7 +88,7 @@ if __name__ == '__main__':
     total_ada = 45000000000
 
     # Retrieve the total number of ADA in circulation at this moment
-    ada_supply = get_crypto_supply('ADA')
+    ada_supply = get_ada_supply()
 
     # Calculate how many of the 45 billion ADA are yet to be minted
     ada_remaining = total_ada - ada_supply
