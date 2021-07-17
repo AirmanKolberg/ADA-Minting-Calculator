@@ -63,5 +63,24 @@ def countdown(seconds):
     clear_screen()
 
 
+# git status
+def get_return_from_bash_command(bash_command):
+
+    # Send the Return of the command to a text file
+    bash_command(f'{bash_command} >> i-will-be-gone-in-a-flash.txt')
+
+    # Open the file and assign its contents to a variable
+    short_lived_file = open('i-will-be-gone-in-a-flash.txt', 'r')
+    file_contents = short_lived_file.read()
+
+    # Close the file
+    short_lived_file.close()
+
+    # Delete this very shortly lived file
+    bash_command('rm i-will-be-gone-in-a-flash.txt')
+
+    return file_contents
+
+
 if __name__ == '__main__':
     pass
