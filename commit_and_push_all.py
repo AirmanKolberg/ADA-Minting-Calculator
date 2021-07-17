@@ -91,7 +91,7 @@ def delete_file(file_names):
 
 def search_for_untracked_files():
 
-    get_return_from_bash_command('git status')
+    untracked_line = get_return_from_bash_command('git status')
 
     # Make untracked_line its own variable in an arrays
     untracked_files = untracked_line.split('\n')
