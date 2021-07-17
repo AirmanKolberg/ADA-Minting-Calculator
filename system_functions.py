@@ -66,17 +66,17 @@ def countdown(seconds):
 def get_return_from_bash_command(bash_command):
 
     # Send the Return of the command to a text file
-    bash_command(f'{bash_command} >> i-will-be-gone-in-a-flash.txt')
+    bash_command(f'{bash_command} >> veryTempFile.txt')
 
     # Open the file and assign its contents to a variable
-    short_lived_file = open('i-will-be-gone-in-a-flash.txt', 'r')
+    short_lived_file = open('veryTempFile.txt', 'r')
     file_contents = short_lived_file.read()
 
     # Close the file
     short_lived_file.close()
 
     # Delete this very shortly lived file
-    bash_command('rm i-will-be-gone-in-a-flash.txt')
+    bash_command('rm veryTempFile.txt')
 
     # Return the contents as a str()
     return file_contents
