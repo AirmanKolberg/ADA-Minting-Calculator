@@ -1,4 +1,4 @@
-from system_functions import bash_command, clear_screen
+from system_functions import bash_command, clear_screen, get_return_from_bash_command
 from json_tools import json_to_dict
 
 
@@ -91,15 +91,7 @@ def delete_file(file_names):
 
 def search_for_untracked_files():
 
-    bash_command(f'git status >> untracked.txt')
-
-    # Import the untracked list
-    untracked = open('untracked.txt', 'r')
-    untracked_line = untracked.read()
-    untracked.close()
-
-    # Ensure list is deleted to avoid overlap
-    bash_command('rm untracked.txt')
+    get_return_from_bash_command('git status')
 
     # Make untracked_line its own variable in an arrays
     untracked_files = untracked_line.split('\n')
