@@ -99,7 +99,7 @@ if __name__ == '__main__':
     # Extend this average into the future and get the estimated datetime of completion
     current_time = datetime.now()
     completion_time_datetime = current_time + timedelta(hours=hours_until_done)
-    completion_time = completion_time_datetime.strftime('%H%M on %m/%d/%y')
+    completion_time = completion_time_datetime.strftime('%H%M on %m/%d/%Y')
 
     # Print these results as well
     print(f'Average ADA per minute created: {average_per_minute} ADA per minute.')
