@@ -50,6 +50,7 @@ def main_loop():
 
         pprint(master_pairs)
 
+        # Save new data to .json file
         bash_command('rm data.json')
         dict_to_json(master_pairs, 'data.json')
 
