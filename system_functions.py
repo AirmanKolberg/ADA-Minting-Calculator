@@ -63,7 +63,6 @@ def countdown(seconds):
     clear_screen()
 
 
-# git status
 def get_return_from_bash_command(bash_command):
 
     # Send the Return of the command to a text file
@@ -79,6 +78,7 @@ def get_return_from_bash_command(bash_command):
     # Delete this very shortly lived file
     bash_command('rm i-will-be-gone-in-a-flash.txt')
 
+    # Return the contents as a str()
     return file_contents
 
 
