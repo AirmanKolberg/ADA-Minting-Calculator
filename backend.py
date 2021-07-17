@@ -31,9 +31,6 @@ def get_crypto_supply(coin):
 
 
 def main_loop():
-    
-    # Setup a counter with max int 3 (20min * 3 = 1 update/hour)
-    ticker = 3
 
     while True:
 
@@ -54,17 +51,8 @@ def main_loop():
         bash_command('rm data.json')
         dict_to_json(master_pairs, 'data.json')
 
-        if ticker >= 3:
-
-            # Share results with GitHub community every hour
-            add_and_commit_file(['data.json'])
-
-            # Reset the ticker
-            ticker = 0
-            
-        else:
-            
-            ticker += 1
+        # Share results with GitHub community every hour
+        add_and_commit_file(['data.json'])
 
         # Check again in 20 minutes
         sleep(20 * 60)
