@@ -54,7 +54,7 @@ def main_loop():
         bash_command('rm data.json')
         dict_to_json(master_pairs, 'data.json')
 
-        if ticker > 2:
+        if ticker >= 3:
 
             # Share results with GitHub community every hour
             add_and_commit_file(['data.json'])
