@@ -134,4 +134,5 @@ if __name__ == '__main__':
 
         delete_file(files_to_delete)
 
-    search_for_untracked_files()
+    # # In-dev feature will be referenced here
+    # search_for_untracked_files()
