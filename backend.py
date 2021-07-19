@@ -1,7 +1,6 @@
 import cryptocompare
 from datetime import datetime
-from time import sleep
-from system_functions import clear_screen, bash_command
+from system_functions import clear_screen, bash_command, countdown
 from pprint import pprint
 from json_tools import *
 from commit_and_push_all import add_and_commit_file
@@ -55,7 +54,7 @@ def main_loop():
         add_and_commit_file(['data.json'])
 
         # Check again in 20 minutes
-        sleep(20 * 60)
+        countdown(20 * 60)
 
 
 if __name__ == '__main__':
@@ -85,5 +84,5 @@ if __name__ == '__main__':
 
         print(f'{error_message}\nRetrying in one minute...')
 
-        sleep(60)
+        countdown(60)
         main_loop()
