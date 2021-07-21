@@ -73,7 +73,7 @@ if __name__ == '__main__':
         
         # Gather error details
         error_time = datetime.now()
-        error_message = f'ERROR: {error}'
+        error_message = f'ERROR:\n{error}'
 
         # Retrieve the errors log
         error_dict = json_to_dict('errors.json')
