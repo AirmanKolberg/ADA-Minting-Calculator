@@ -85,5 +85,6 @@ if __name__ == '__main__':
 
         print(f'{error_message}\nRetrying in one minute...')
 
+        # Wait a minute then re-run the script
         countdown(60)
-        main_loop()
+        bash_command('python3 backend.py')
