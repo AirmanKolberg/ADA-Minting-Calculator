@@ -31,37 +31,38 @@ def get_crypto_supply(coin):
 
 def main_loop():
 
-    while True:
+    # Retrieve the master_pairs variable
+    master_pairs = json_to_dict('data.json')
 
-        # Retrieve the master_pairs variable
-        master_pairs = json_to_dict('data.json')
+    date_and_time = get_datetime()
+    ada_supply = get_crypto_supply('ADA')
 
-        date_and_time = get_datetime()
-        ada_supply = get_crypto_supply('ADA')
+    # Add the date_and_time and supply to the master dictionary
+    master_pairs[date_and_time] = ada_supply
 
-        # Add the date_and_time and supply to the master dictionary
-        master_pairs[date_and_time] = ada_supply
+    clear_screen()
 
-        clear_screen()
+    pprint(master_pairs)
 
-        pprint(master_pairs)
+    # Save new data to .json file
+    bash_command('rm data.json')
+    dict_to_json(master_pairs, 'data.json')
 
-        # Save new data to .json file
-        bash_command('rm data.json')
-        dict_to_json(master_pairs, 'data.json')
+    # Share results with GitHub community every hour
+    add_and_commit_file(['data.json'])
 
-        # Share results with GitHub community every hour
-        add_and_commit_file(['data.json'])
-
-        # Check again in 20 minutes
-        countdown(20 * 60)
+        
 
 
 if __name__ == '__main__':
 
     try:
 
-        main_loop()
+        while True:
+            main_loop()
+
+            # Check again in 20 minutes
+            countdown(20 * 60)
 
     except KeyboardInterrupt:
 
