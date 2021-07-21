@@ -1,2 +1,4 @@
 cryptocompare
 json
+matplotlib
+numpy
