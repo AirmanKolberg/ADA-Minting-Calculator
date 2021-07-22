@@ -53,7 +53,7 @@ def clean_data(x_data):
 
 def plot_data(x, y):
 
-    plt.scatter(x, y)
+    plt.plot(x, y)
     plt.show()
 
 
