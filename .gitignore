@@ -4,3 +4,4 @@ secrets.py
 commit_and_push_all.py
 name_to_commit.py
 masterCommit.json
+estimations_log.json
