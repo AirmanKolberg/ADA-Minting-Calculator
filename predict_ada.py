@@ -105,5 +105,12 @@ if __name__ == '__main__':
     completion_time = completion_time_datetime.strftime('%H%M on %m/%d/%Y')
 
     # Print these results as well
-    print(f'Average ADA per minute created: {average_per_minute} ADA per minute.')
-    print(f'At this rate, all ADA should be minted at around:\n{completion_time}.')
+    results_message = f"""Average ADA per minute created: {average_per_minute} ADA per minute.
+
+At this rate, all ADA should be minted at around:\n{completion_time}."""
+
+    print(results_message)
+
+    # Log this estimation instance
+    log_information = {datetime.now(): results_message}
+    dict_to_json(log_information, 'estimations_log.json')
