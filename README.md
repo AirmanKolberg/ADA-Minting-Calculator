@@ -19,8 +19,8 @@ decreasing).
 
 ## Steps to Take
 
-1. Whether it be `pip` or `pip3`, be sure to install all dependencies with a:
-`pip install -r requirements.txt`
+1. Run the installer:  `./installer.sh`
+*(Note: if the file cannot execute, first try `chmod +x installer.sh` to make it executable)*
 2. Run the `backend.py` file in the Terminal emulator with either:
    `python backend.py` -or- `python3 backend.py`
 
