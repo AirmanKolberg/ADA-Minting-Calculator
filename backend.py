@@ -48,7 +48,7 @@ def main_loop():
     bash_command('rm data.json')
     dict_to_json(master_pairs, 'data.json')
 
-    # Share results with GitHub community every hour
+    # Share results with GitHub community
     add_and_commit_file(['data.json'])
 
         
