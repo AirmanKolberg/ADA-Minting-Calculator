@@ -1,8 +1,8 @@
 import matplotlib.pyplot as plt
-import numpy as np
 from json_tools import json_to_dict
 import datetime
 from math import floor
+from system_functions import clear_screen
 
 """
 Run this script to graph all of the
@@ -52,12 +52,13 @@ def clean_data(x_data):
 
 
 def plot_data(x, y):
-
     plt.plot(x, y)
     plt.show()
 
 
 if __name__ == '__main__':
+
+    clear_screen()
 
     # Retrieve ADA data
     ada_data = json_to_dict('data.json')
@@ -69,5 +70,11 @@ if __name__ == '__main__':
     x = [i for i in ada_data]
     x = clean_data(x)
     x = determine_x_values(x)
-    
+
+    # Display (x, y) values
+    print('Values:')
+    for i in range(len(x)):
+
+        print(f'({x[i]}, {y[i]})')
+
     plot_data(x, y)
