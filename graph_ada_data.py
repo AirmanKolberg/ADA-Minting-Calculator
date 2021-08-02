@@ -74,7 +74,6 @@ if __name__ == '__main__':
     # Display (x, y) values
     print('Values:')
     for i in range(len(x)):
-
         print(f'({x[i]}, {y[i]})')
 
     plot_data(x, y)
