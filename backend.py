@@ -60,13 +60,13 @@ if __name__ == '__main__':
     try:
 
         while True:
-            
+
             start_timer = time()
             main_loop()
             function_runtime = (time() - start_timer)
 
             # Check again in 20 minutes
-            countdown((20 * 60) - function_runtime)
+            countdown(1200 - function_runtime)
 
     except KeyboardInterrupt:
 
