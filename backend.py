@@ -4,6 +4,7 @@ from system_functions import clear_screen, bash_command, countdown
 from pprint import pprint
 from json_tools import *
 from commit_and_push_all import add_and_commit_file
+from time import time
 
 """
 Run this script like as a server, just running
@@ -59,10 +60,12 @@ if __name__ == '__main__':
     try:
 
         while True:
+            start_timer = time()
             main_loop()
+            function_runtime = (time() - start_timer)
 
             # Check again in 20 minutes
-            countdown(20 * 60)
+            countdown((20 * 60) - function_runtime)
 
     except KeyboardInterrupt:
 
