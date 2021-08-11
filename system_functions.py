@@ -1,5 +1,6 @@
 from os import system
 from time import sleep
+from math import floor
 
 
 def bash_command(user_in):
@@ -49,7 +50,7 @@ def countdown(seconds):
             sec_display = 'sec'
 
         # `timer` example: "Updating in 121mins 1sec..."
-        timer = f'Updating in {mins}{min_display} {secs}{sec_display}...'
+        timer = f'Updating in {mins}{min_display} {floor(secs)}{sec_display}...'
 
 
         print(timer, end="\r")
