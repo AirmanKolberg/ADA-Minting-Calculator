@@ -117,5 +117,5 @@ At this rate, all ADA should be minted at around:\n{completion_time}."""
     print(results_message)
 
     # Log this estimation instance
-    log_information = {datetime.now(): results_message}
+    log_information = {datetime.now().strftime('%m/%d/%Y @ %H:%M:%S'): results_message}
     dict_to_json(log_information, 'estimations_log.json')
