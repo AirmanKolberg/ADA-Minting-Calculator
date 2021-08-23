@@ -76,9 +76,12 @@ if __name__ == '__main__':
         supply_difference = difference_between(current_supply, last_supply)
         minute_difference = get_time_between_datetimes(last_datetime, current_datetime)
 
-        difference_per_minute = supply_difference / minute_difference
+        try:
+            difference_per_minute = supply_difference / minute_difference
 
-        differences_per_minute.append(difference_per_minute)
+            differences_per_minute.append(difference_per_minute)
+        except ZeroDivisionError:
+            pass
 
         # Print the results
         print(f"Up {supply_difference} in {minute_difference} minutes.")
@@ -95,14 +98,16 @@ if __name__ == '__main__':
 
     # Calculate how many of the 45 billion ADA are yet to be minted
     ada_remaining = total_ada - ada_supply
+    try:
+        minutes_until_done = ada_remaining / average_per_minute
+        hours_until_done = (minutes_until_done / 60).__round__(2)
 
-    minutes_until_done = ada_remaining / average_per_minute
-    hours_until_done = (minutes_until_done / 60).__round__(2)
-
-    # Extend this average into the future and get the estimated datetime of completion
-    current_time = datetime.now()
-    completion_time_datetime = current_time + timedelta(hours=hours_until_done)
-    completion_time = completion_time_datetime.strftime('%H%M on %m/%d/%Y')
+        # Extend this average into the future and get the estimated datetime of completion
+        current_time = datetime.now()
+        completion_time_datetime = current_time + timedelta(hours=hours_until_done)
+        completion_time = completion_time_datetime.strftime('%H%M on %m/%d/%Y')
+    except ZeroDivisionError:
+        pass
 
     # Print these results as well
     results_message = f"""Average ADA per minute created: {average_per_minute} ADA per minute.
